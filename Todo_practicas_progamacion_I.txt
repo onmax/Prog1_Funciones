@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////MATEMÁTICAS/////////////////////////////////////////
+///////////////////////////////////////////////MATEMÃTICAS/////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 A ELEVADO A B: Math.pow(a, b);
@@ -86,7 +86,7 @@ static String calculadora(int primero, int segundo, String operador){
          break;
          
        default:
-         solucion = "<<ERROR: Compueba que el operador sea válido.>>";
+         solucion = "<<ERROR: Compueba que el operador sea vÃ¡lido.>>";
          break;
      }
      return solucion;
@@ -122,11 +122,11 @@ static int fibonacci(int x){
 
  static String elefante(int n){
     if (n == 1){
-      return "1 elefante se balanceaba sobre la tela de una araña y como veía que no se caía fue a llamar a otro "
+      return "1 elefante se balanceaba sobre la tela de una araÃ±a y como veÃ­a que no se caÃ­a fue a llamar a otro "
         + "elefante. \n";
     }else{
-      return elefante(n-1) + n + " elefantes se balanceaban sobre la tela de una araña y como veían "
-        + "que no se caían fueron a llamar a otro elefante. \n";
+      return elefante(n-1) + n + " elefantes se balanceaban sobre la tela de una araÃ±a y como veÃ­an "
+        + "que no se caÃ­an fueron a llamar a otro elefante. \n";
     }
   }
 
@@ -165,7 +165,7 @@ static int numeroCifras(int num){
 int [] arrEnt = {2, 4, 6, 5, 1};
 
 static int [] leerArray(){
-    System.out.println("define el tamaño del array: ");
+    System.out.println("define el tamaÃ±o del array: ");
     int tam = StdIn.readInt();
     int [] arr = new int [tam];
     for (int i = 0; i < arr.length; i++){
