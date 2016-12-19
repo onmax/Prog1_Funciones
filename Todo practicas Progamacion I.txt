@@ -1,0 +1,427 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////MATEMÁTICAS/////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+A ELEVADO A B: Math.pow(a, b);
+
+static double areaCirculo(double radio){
+    return radio*radio*3.1416;
+  }
+
+ static int horasASegundos(int horas, int minutos, int segundos){
+    return horas * 3600 + minutos * 60 + segundos;
+  }
+
+ static double segundosAHoras (double segundos){
+    double horas = segundos/3600;
+    return horas;
+  }
+
+static boolean esPar (int num){
+    return num%2==0;
+  }
+
+static boolean esMultiplo(int m, int n){
+    boolean resultado =  m%n == 0;
+    return resultado;
+  }
+
+ static int devolverParteEnteraDeDecimal(double x){
+    int num = (int)x;
+    return num;
+  }
+
+  static double devolverParteEnteraDeEntera(double y){
+    int resultado = (int)y;
+    double numeroDecimal = y - resultado;
+    return numeroDecimal;
+  }
+
+static char aMayuscula (int letraAMayuscula){
+      int calculoDiferencia = 'a' - 'A';
+      int numeroAscii = letraAMayuscula - calculoDiferencia;
+      char resultadoChar = (char)numeroAscii;
+      return resultadoChar;
+    }
+
+ static char aMinuscula (int letraAMinuscula){
+      int calculoDiferencia = 'a' - 'A';
+      int numeroAscii = letraAMinuscula + calculoDiferencia;
+      char resultadoChar = (char)numeroAscii;
+      return resultadoChar;
+    }
+
+static char charADigito(int entero){
+    char resultado = (char) entero;
+    return resultado;
+  }
+
+static String calculadora(int primero, int segundo, String operador){
+     
+     String solucion;
+     if(operador != "+" || operador != "-" || operador != "x" || operador != "*" || operador != "/" ){
+       solucion = "Introduce un operador que sea:`+, - *, /.";
+     }
+     switch(operador){
+       case "+":
+         double operacion = primero + segundo;
+         solucion = String.valueOf(operacion);
+         break;
+         
+       case "-":
+         operacion = primero - segundo;
+         solucion = String.valueOf(operacion);
+         break;
+       case "*":
+          operacion = primero * segundo;
+          solucion = String.valueOf(operacion);
+          break;
+       case "x":
+          operacion = primero * segundo;
+          solucion = String.valueOf(operacion);
+          break;
+       case "/":
+         operacion = primero / segundo;
+         solucion = String.valueOf(operacion);
+         break;
+         
+       default:
+         solucion = "<<ERROR: Compueba que el operador sea válido.>>";
+         break;
+     }
+     return solucion;
+   }
+
+static int fibonacci(int x){
+    if(x == 0 || x == 1){
+      return 1;
+    }else{
+      return fibonacci (x-1) + fibonacci(x-2);
+    }
+  }
+
+  static String lineaAsterisco(long numeroAs){ 
+    if(numeroAs == 1){
+      return "*";
+    }else{
+      return lineaAsterisco(numeroAs - 1) + "*"; 
+    }
+  }
+
+ static String escalera(int num){
+    if (0 < num){
+      if(num == 1){
+        return "*";
+      }else{
+        System.out.println(escalera(num-1));
+        return (lineaAsterisco(num - 1) + "*");
+      }
+    }
+    return "";
+  }
+
+ static String elefante(int n){
+    if (n == 1){
+      return "1 elefante se balanceaba sobre la tela de una araña y como veía que no se caía fue a llamar a otro "
+        + "elefante. \n";
+    }else{
+      return elefante(n-1) + n + " elefantes se balanceaban sobre la tela de una araña y como veían "
+        + "que no se caían fueron a llamar a otro elefante. \n";
+    }
+  }
+
+  static String contador(int numeroMax){
+    for (int i = 1; i <= numeroMax; i++){
+      System.out.print(i + " ");
+    }
+    return "";
+  }
+
+static String contadorPares(int numeroMaxPar){
+    for (int i = 1; i <= numeroMaxPar; i++){
+      if(i%2== 0){
+      System.out.print(i + " ");
+      }
+    }
+    return "";
+  }
+
+static int numeroCifras(int num){
+    int resultado = 0;
+    while(num >= 1){
+      num = num/10;
+      resultado++;
+    }
+    return resultado;
+  }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////ARRAY///////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//Declarar array.
+int [] arrEnt = {2, 4, 6, 5, 1};
+
+static int [] leerArray(){
+    System.out.println("define el tamaño del array: ");
+    int tam = StdIn.readInt();
+    int [] arr = new int [tam];
+    for (int i = 0; i < arr.length; i++){
+      System.out.println("introduce un elemento del array");
+      arr[i] = StdIn.readInt();
+    }
+    return arr;
+  }
+
+static String mostrarArrayInt(int [] elementos){
+    String resultado = "";
+    for (int i = 0; i < elementos.length-1; i++)
+      resultado = resultado + elementos[i] + ",";
+    return "[" + resultado  + elementos[elementos.length-1] + "]";
+  }
+
+  static String mostrarArrayChar(char [] elementos){
+    String resultado = "";
+    for (int i = 0; i < elementos.length-1; i++)
+      resultado = resultado + elementos[i] + ",";
+    return "[" + resultado  + elementos[elementos.length-1] + "]";
+  }
+
+static boolean estaEnArray(int [] nEnArray, int n){
+    boolean resultado = false;
+    for(int i = 0; i < nEnArray.length; i++){
+      if(nEnArray[i] == n){
+        resultado = true;
+        break;
+      }
+    }
+    return resultado;
+  }
+
+ static int ocurrenciasChar(String s, char caracter){
+    int count = s.length() - 1;
+    int res = 0;
+    for(int i = 0; i<= count; i++){
+      if(s.charAt(i) == caracter){
+        res ++;
+      }
+    }
+    return res;
+  }
+
+static int [] invertirArray(int [] arr){
+    int [] resArr = new int[arr.length];
+    int cont = 0;
+    for(int i = arr.length-1; i>=0 ;i--){
+      resArr[cont] = arr[i];
+      cont++;
+    }
+    return resArr;
+  }
+
+ static char [] capitalizarArray(char [] arr){
+    char [] res = new char [arr.length];
+    for(int i= 0; i<arr.length; i++){
+      res[i] = aMayuscula(arr[i]);
+    }
+    return res;
+  }
+
+static String strAArray(String s){
+    int count = s.length() -1;
+    String resultado = "[";
+    for (int i = 0; i < count; i++){
+        resultado += s.charAt(i) + ", ";
+    }
+    return resultado +  s.charAt(count) + "]";
+  }
+
+  static boolean esSubstring(String s, String p){
+    int countP = p.length();
+    int countS = s.length() - 1;
+    if(countP == countS+1 && s.equals(p)){
+      return true;
+    }
+    if(countP == countS+1 &&!(s.equals(p))){
+      return false;
+    }
+    boolean resultado = false;
+    if(countP == 0){
+      resultado = false;
+    }else{
+      for(int i = 0;i<= countS; i++){
+        if(s.charAt(i) == p.charAt(0)){
+          String x = s.substring(i,i+countP);
+          if(x.equals(p)){
+            resultado = true;
+            break;
+          }
+        }
+      }
+    }
+    return resultado;
+   }
+
+  static boolean palindromo(char [] pal){
+    int countPal = pal.length;
+    int relaciones = countPal / 2;
+    for(int i = 0; i<= relaciones; i++){
+      countPal--;
+      if(pal[i] != pal[countPal]){
+        return false;
+      }
+    }
+    return true;
+  }
+
+static int [] mulConstante(int [] arr, int n){
+    int count = arr.length;
+    int []res=new int[count];
+    for(int i = 0; i < count; i++){
+      res[i] = arr[i] *  n;
+    }
+    return res;
+  }
+
+static int contarImparesArr(int [] arr){
+    int numerosImpares = 0;
+    for(int i = 0; i < arr.length; i++){
+      if(arr[i] %2 != 0){
+        numerosImpares ++;
+      }
+    }
+    return numerosImpares;
+  }
+
+  static int [] quitarPares(int [] arr){
+    int [] res = new int[contarImparesArr(arr)];
+    int cont = 0;
+    for(int i = 0; i < arr.length; i++){
+      if(arr[i]%2 != 0){
+        res[cont] = arr[i];
+        cont++;
+      }
+    }
+    return res;
+  }
+
+ static int sumaElementos(int [] arr){
+    int resultado = 0;
+    for(int i = 0; i < arr.length; i++){
+      resultado += arr[i];
+    }
+    return resultado;
+  }
+
+static  boolean esCapicua(int [] arrayCapicua){
+     boolean resultado = true;
+     int longitudArray = arrayCapicua.length - 1;
+     int pares = arrayCapicua.length/2;
+     int numero = 0;
+     
+     for(int i = longitudArray; i >= 0; i--){
+       if(arrayCapicua[numero] == arrayCapicua[i]){
+       numero ++;
+       if(pares == i){
+         break;
+       }
+         
+       }else{
+         resultado = false;
+       }
+       
+     }
+     return resultado;
+   }
+
+static int [] subCadena(int [] arr, int inicio, int fin){
+    int ele;
+    if(arr.length - fin - inicio < 0){
+      ele = arr.length - inicio;
+    }else{
+      ele = fin - inicio;
+    }
+    int res [] = new int [ele];
+    int cont = 0;
+    while(cont < res.length){
+       res[cont] = arr[inicio];
+       inicio ++;
+       cont++;
+     }
+    
+       return res;
+  }
+
+  static String mostrarMatriz(int [][] arr){
+    String res = "";
+    for(int i = 0; i<arr.length; i++){
+      res += "\n";
+      for(int j = 0; j<arr[i].length; j++){
+        res += arr[i][j] + " ";
+      }
+    }
+    return res;
+  }
+
+  static String sumaMatrices (int [][] arr1, int [][] arr2){
+    String res = "";
+    for(int i = 0; i<arr1.length; i++){
+      for(int j = 0; j<arr1[i].length; j++){
+        res += arr1[i][j] + arr2[i][j] + " ";
+      }
+      res += "\n";
+    }
+    return res;
+  }
+
+  static boolean estaNenMatriz (int [][] arr, int n){
+    boolean res = false;
+    for(int i = 0; i<arr.length; i++){
+      for(int j = 0; j<arr[i].length; j++){
+        if(arr[i][j] == n){
+          res = true;
+        }
+      }
+    }
+    return res;
+  }
+
+
+static String ordenarBurbuja(int [] arr){
+   int aux = 0;
+   for(int i=0;i<arr.length-1;i++){
+     for(int j=0;j<arr.length-i-1;j++){
+                   if(arr[j+1]<arr[j]){
+                      aux=arr[j+1];
+                      arr[j+1]=arr[j];
+                      arr[j]=aux;
+                   }
+     }
+   }
+    String res = mostrarArray(arr);
+    return res;
+  }
+
+ static boolean busquedaBinaria(int [] arr, int n){
+    int first = 0;
+    int last = arr.length -1;
+    int center =  arr.length/2;
+    boolean res = false;
+    while (!res){
+      if(n == arr[center] || n == arr[first] || n==arr[last]){
+        res = true;
+      }else if(center == first || center == last){
+        return false;
+      }else if(n<arr[center]){
+        last = center;
+        center /= 2;
+      }else if(n>arr[center]){
+        first = center;
+        center += (last-center)/2;
+      }
+    }
+    return res;
+  }
+  
