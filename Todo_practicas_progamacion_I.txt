@@ -156,6 +156,18 @@ static int numeroCifras(int num){
   }
 
 
+  //ABC y 123 => A1, A2, A3, B1, B2.... C3
+static String unirDosStringIguales (String colum,String filas){
+    String resultado = "";
+    for (int i = 0; i<8; i++){
+      for (int j= 0; j<8; j++){
+        resultado = resultado + colum.charAt(i) + filas.charAt(j) + " ";
+      }
+      resultado += "\n";
+    }
+    return  resultado;
+  }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////ARRAY///////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -424,4 +436,3 @@ static String ordenarBurbuja(int [] arr){
     }
     return res;
   }
-  
